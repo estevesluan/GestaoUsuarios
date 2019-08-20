@@ -1,0 +1,35 @@
+﻿
+<environment include="Development">
+    <script src="~/js/usuarioDetalhes.js"></script>
+</environment>
+<environment exclude="Development">
+    <script src="~/js/usuarioDetalhes.min.js" sp-append-version="true"></script>
+</environment>
+
+<script>
+    atualizarMenu("");
+</script>
+
+<input type="hidden" id="input-id" value="@ViewBag.Id" />
+
+<li class="media item-lista-usuario">
+
+    <img class="mr-3 img-detalhes" src="" alt="" id="img-foto">
+
+    <div class="media-body">
+
+        <a class="text-decoration-none" id="a-cadastro">
+            <h4 class="mt-0 mb-1"><span id="span-nome"></span></h4>
+        </a>
+        <p class="mt-0 mb-1">Mãe: <span id="span-mae"></span></p>
+        <p class="mt-0 mb-1">Data de nascimento: <span id="span-nascimento"></span></p>
+        <p class="mt-0 mb-1">Pai: <span id="span-pai"></span></p>
+        <p class="mt-0 mb-1">CPF: <span id="span-cpf"></span></p>
+        <p class="mt-0 mb-1">Telefone: <span id="span-telefone"></span></p>
+        <p class="mt-0 mb-1">Email: <span id="span-email"></span></p>
+        <p class="mt-0 mb-1">CEP: <span id="span-cep"></span></p>
+        <p class="mt-0 mb-1">Endereço: <span id="span-endereco"></span></p>
+
+    </div>
+
+</li>

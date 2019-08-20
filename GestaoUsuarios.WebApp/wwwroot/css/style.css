@@ -1,0 +1,104 @@
+﻿body {
+    padding-bottom: 5rem;
+    color: #5a5a5a;
+}
+
+    body.text-center {
+        display: flex;
+        align-items: center !important;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+    }
+
+.form-login {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+    .form-login input.login {
+        margin-bottom: -1px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .form-login input.senha {
+        margin-bottom: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+.body-content {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.item-lista-usuario {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.img-cadastro {
+    max-width: 20%;
+}
+
+.img-base {
+    width: 100%;
+    padding-top: 20px;
+}
+
+.img-detalhes{
+    max-width: 20%;
+}
+
+.container-nome-usuario {
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.nome-usuario {
+    margin-left: 5px;
+}
+
+.text-decoration-none {
+    color: inherit;
+}
+
+a:hover{
+    color:black;
+}
+
+.navbar {
+    background-color: #295480 !important;
+}
+
+.nav-link{
+    color: #fff;
+}
+
+.nav-pills .nav-link.active{
+    color:black;
+    background-color:#fff;
+}
+
+.pagination .page-link{
+    color:black;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #343a40;
+    border-color: #343a40;
+}
+
+.label-campo-obrigatorio::after {
+    content: "*";
+    color: #dc3545 !important;
+    margin-left: 5px;
+}

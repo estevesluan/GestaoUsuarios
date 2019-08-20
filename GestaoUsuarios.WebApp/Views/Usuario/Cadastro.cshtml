@@ -1,0 +1,240 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<environment include="Development">
+    <script src="~/js/usuarioCadastro.js"></script>
+</environment>
+<environment exclude="Development">
+    <script src="~/js/usuarioCadastro.min.js" sp-append-version="true"></script>
+</environment>
+
+<script>
+    atualizarMenu("menu-cadastro");
+</script>
+
+<h2>Cadastro</h2>
+
+<hr>
+
+<main>
+    <form id="form-usuario">
+
+        <input type="hidden" id="input-id" value="@ViewBag.Id" />
+
+        <div class="form-group text-center">
+
+            <img class="img-cadastro" src="" alt="" id="img-foto" />
+
+        </div>
+
+        <div class="form-row">
+
+            <div class="col-md-6 mb-3">
+
+                <label asp-validation-for="Foto" id="label-foto">Foto</label>
+                <div class="custom-file">
+
+                    <input class="custom-file-input" type="file" accept="image/x-png" id="input-foto">
+                    <label class="custom-file-label" for="customFile" id="label-selecionar-foto">Selecione uma foto</label>
+
+                </div>
+                <div class="valid-feedback"></div>
+
+            </div>
+
+        </div>
+
+        <div class="form-row">
+
+            <div class="col-md-3 mb-3">
+
+                <label class="label-campo-obrigatorio" asp-validation-for="Nome" id="label-nome">Nome</label>
+                <input class="form-control" placeholder="Nome" maxlength="40" id="input-nome" />
+                <div class="valid-feedback"></div>
+
+            </div>
+
+            <div class="col-md-5 mb-3">
+
+                <label class="label-campo-obrigatorio" asp-validation-for="Sobrenome" id="label-sobrenome">Sobrenome</label>
+                <input class="form-control" placeholder="Sobrenome" maxlength="80" id="input-sobrenome" />
+                <div class="valid-feedback"></div>
+
+            </div>
+
+            <div class="col-md-4 mb-3">
+
+                <label class="label-campo-obrigatorio" asp-validation-for="Nascimento" id="label-nascimento">Nascimento</label>
+                <input class="form-control" placeholder="Nascimento" id="input-nascimento" />
+                <div class="valid-feedback"></div>
+
+            </div>
+
+        </div>
+
+        <div class="form-row">
+
+            <div class="col-md-6 mb-3">
+
+                <label class="label-campo-obrigatorio" asp-validation-for="NomeMae" id="label-mae">Mãe</label>
+                <input class="form-control" placeholder="Nome da mãe" maxlength="120" id="input-mae" />
+                <div class="valid-feedback"></div>
+
+            </div>
+
+            <div class="col-md-6 mb-3">
+
+                <label asp-validation-for="NomePai" id="label-pai">Pai</label>
+                <input class="form-control" placeholder="Nome do pai" maxlength="120" id="input-pai" />
+                <div class="valid-feedback"></div>
+
+            </div>
+
+        </div>
+
+        <div class="form-row">
+
+            <div class="col-md-3 mb-3">
+
+                <label class="label-campo-obrigatorio" asp-validation-for="Cpf" id="label-cpf">CPF</label>
+                <input class="form-control" placeholder="Cpf" id="input-cpf" />
+                <div class="valid-feedback"></div>
+
+            </div>
+
+            <div class="col-md-3 mb-3">
+
+                <label class="label-campo-obrigatorio" asp-validation-for="Senha" id="label-senha">Senha</label>
+                <input class="form-control" placeholder="Senha" type="password" maxlength="50" id="input-senha" />
+                <div class="valid-feedback"></div>
+
+            </div>
+
+            <div class="col-md-3 mb-3">
+
+                <label class="label-campo-obrigatorio" asp-validation-for="SenhaConfirma" id="label-senha-confirma">Confirmar senha</label>
+                <input class="form-control" placeholder="Confirmar senha" type="password" id="input-senha-confirma" />
+                <div class="valid-feedback"></div>
+
+            </div>
+
+            <div class="col-md-3 mb-3">
+
+                <label class="label-campo-obrigatorio" asp-validation-for="Telefone" id="label-telefone">Telefone</label>
+                <input class="form-control" placeholder="Telefone" id="input-telefone" />
+                <div class="valid-feedback"></div>
+
+            </div>
+
+        </div>
+
+        <div class="form-row">
+
+            <div class="col-md-9 mb-3">
+
+                <label asp-validation-for="Email" id="label-email">Email</label>
+                <input class="form-control" placeholder="Email" maxlength="80" id="input-email" />
+                <div class="valid-feedback"></div>
+
+            </div>
+
+        </div>
+
+        <div class="form-row">
+
+            <div class="col-md-4 mb-3">
+
+                <label class="label-campo-obrigatorio" asp-validation-for="Cep" id="label-cep">CEP</label>
+
+                <div class="input-group">
+
+                    <input class="form-control" placeholder="Cep" id="input-cep" />
+
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;" id="span-spinner-cep"></span>
+                        </div>
+                    </div>
+
+                    <div class="valid-feedback"></div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-2 mb-3">
+                <label asp-validation-for="NumeroEndereco" id="label-numero-endereco">Número</label>
+                <input class="form-control" placeholder="Número" id="input-numero-endereco" />
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label>Logradouro</label>
+                <input class="form-control" disabled id="input-logradouro" />
+            </div>
+
+        </div>
+
+        <div class="form-row">
+
+            <div class="col-md-4 mb-3">
+                <label>Localidade</label>
+                <input class="form-control" disabled id="input-localidade" />
+            </div>
+
+            <div class="col-md-1 mb-3">
+                <label>UF</label>
+                <input class="form-control" disabled id="input-uf" />
+            </div>
+
+            <div class="col-md-7 mb-3">
+                <label>Bairro</label>
+                <input class="form-control" disabled id="input-bairro" />
+            </div>
+
+        </div>
+
+        <div class="form-row">
+
+            <div class="col-md-8 mb-3">
+                <label>Complemento</label>
+                <input class="form-control" disabled id="input-complemento" />
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label>Unidade</label>
+                <input class="form-control" disabled id="input-unidade" />
+            </div>
+
+        </div>
+
+        <div class="form-row">
+
+            <div class="col-md-2 mb-3">
+                <label>Ibge</label>
+                <input class="form-control" disabled id="input-ibge" />
+            </div>
+
+            <div class="col-md-2 mb-3">
+                <label>Gia</label>
+                <input class="form-control" disabled id="input-gia" />
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <div class="col-sm-10">
+
+                <button class="btn btn-primary" id="btn-salvar">Salvar</button>
+                <button class="btn btn-dark" id="btn-novo">Novo</button>
+                <button class="btn btn-danger" id="btn-excluir" style="display: none;">Excluir</button>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</main>
